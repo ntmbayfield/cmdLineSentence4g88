@@ -1,0 +1,40 @@
+.odd {
+  background-color: yellow;
+}
+
+.even {
+  background-color: green;
+}
+
+p {
+  display: inline-block;
+  height: 44;
+}
+
+.blockAlign {
+  height: 44;
+}
+.blockAlign p {
+  display: block;
+  vertical-align: middle;
+}
+
+.column1 {
+  float: left;
+  margin: 0 1.5%;
+  width: 45%;
+}
+
+.column2 {
+  float: right;
+  margin: 0 1.5%;
+  width: 45%;
+}
+
+img {
+  float: left;
+}
+
+.clearfix {
+    overflow: auto;
+}
