@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculate Your Evil Genius Name and Title</title>
+  <link rel="stylesheet" href="egNameGenerator.css">
+  <script>
+  "use strict";
+  var $ = function(id) {
+      return document.getElementById(id);
+  };
+
+    var generator = function(userInfo) {
+
+      // get the first letter of the user's first name
+      const firstLetterOfFName = {"A": "Red", "B": "Dark", "C": "Grey", "D": "Tidal", "E": "Tri", "F": "Strike", "G": "Poison", "H": "Flare", "I": "Blue", "J": "Killer", "K": "Black", "L": "Infinity", "M": "Star", "N": "Chief", "O": "Crazed", "P": "Quake", "R": "Sarsic", "S": "White", "T": "Devil", "U": "Green", "V": "Silver", "W": "Psion", "X": "Arctic", "Y": "Green", "Z": "Storm"}
+
+      //get the first letter of the user's last name
+      const firstLetterOfLName = {"A": "Warrior", "B": "Evil Genius", "C": "Tempter", "D": "Shot", "E": "Doom", "F": "Sword", "G": "Stalker", "H": "Killer", "I": "Slicer", "J": "Thorn", "K": "Fist", "L": "Tyrant", "M": "Lord", "N": "Professor", "O": "Dragon", "P": "Whip", "Q": "Nymph", "R": "Tiger", "S": "Cyborg", "T": "Wizard", "U": "Light", "V": "Brain", "W": "One", "X": "Beast", "Y": "Croc", "Z": "Born"}
+
+      //get the day of the month that the user was born
+      const dayOfBirth = ["The Trickster", "The Destroyer", "The Terror", "The Ruler", "The Murderer", "The Richest", "The Monarch", "The Master", "The Enslaver", "The Horror", "The Mistake", "The Mercenary", "The Keeper", "The Rogue", "The General", "The Reviled", "The Smiter", "The Eviscerator", "The Queller", "The Abolisher", "The Silencer", "The Evilest", "The Assassin", "The Pestilence", "The Hated", "The Feared", "The Dreaded", "The Survivor", "The Immortal", "The Consort", "The Demon"]
+
+      //get the first letter of the user's middle name
+      const firstLetterOfMName = {"A": "of Men", "B": "of Hope", "C": "of Europe", "D": "of Gotham", "E": "of Women", "F": "of The Ancient Ones", "G": "of Death", "H": "of Time", "I": "of Humanity", "J": "of Earth", "K": "of The States", "L": "of The Future", "M": "of Asia", "N": "of Mars", "O": "of The Galaxy", "P": "of The Stars", "Q": "of Nature", "R": "of the Living", "S": "of Metropolis", "T": "of Them All", "U": "of Freedom", "V": "of Knowledge", "W": "of Lust", "X": "of Space", "Y": "of Faith", "Z": "of Asia"}
+
+
+      let firstPartOfEGName ="";
+      let firstLetterOfFirstName=userInfo.firstName[0];
+      firstPartOfEGName = firstLetterOfFName[firstLetterOfFirstName];
+
+      let secondPartOfEGName ="";
+      let firstLetterOfLastName = userInfo.lastName[0];
+      secondPartOfEGName = firstLetterOfLName[firstLetterOfLastName];
+
+      let fourthPartOfEGName ="";
+      let firstLetterOfMiddleName = userInfo.middleName[0];
+      fourthPartOfEGName = firstLetterOfMName[firstLetterOfMiddleName];
+
+      let thirdPartOfEGName = "";
+      let dayWhenBorn  = userInfo.dayOfMonthOfBirthday;
+      thirdPartOfEGName = dayOfBirth[dayWhenBorn -1];
+
+      let fullEGName = firstPartOfEGName + " " + secondPartOfEGName + ", " + thirdPartOfEGName + " " + fourthPartOfEGName;
+      console.log("Your evil genius name and title is:" + fullEGName);
+
+      document.getElementById("generatedName").innerHTML = "Your Evil Genius Name And Title is: " + fullEGName + "!";
+
+      document.getElementById("insertImage").src= "Invader-Zim-Movie-Nickelodeon2.jpg";
+      return fullEGName;
+      }
+
+      var processEntries = function() {
+
+        var userInfo ={};
+
+        userInfo['firstName'] = $("firstInitial").value;
+          console.log("first initial is ", userInfo.firstName[0]);
+        userInfo['lastName'] = $("lastInitial").value;
+          console.log("last initial is ", userInfo.lastName[0]);
+        userInfo['middleName']= $("middleInitial").value;
+          console.log("middle initial is ", userInfo.middleName[0]);
+        userInfo['dayOfMonthOfBirthday'] = $("dInM").value;
+          console.log("born on this day of the month ",
+        userInfo.dayOfMonthOfBirthday);
+
+        $("generatedName").value = generator(userInfo);
+    };
+
+    // var para = document.createElement("P");
+    // var txt = document.createTextNode(Name);
+    // para.appendChild(txt);
+    // document.body.appendChild(para);
+
+    window.onload = function() {
+            $("button").onclick = processEntries;
+            $("firstInitial").focus();
+        };
+
+  </script>
+
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="classic-title">
+        <div class="striker">
+          <h3 class="inner-striker">Also Known As...</h3>
+        </div>
+        <h3 class="outer-striker">Are You Ready to Discover What Your Evil Genius Name Is?</h3>
+        <div class="incline-div"></div>
+      </div>
+    </div>
+
+    <div class="boxed">
+      <div class="col-sm-12">
+        <div class="container">
+
+          <div class="form">
+            <div class="row">
+              <div class="col-50">
+                <h3>Calculate Your Evil Genius Name and Title:</h3>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="firstInitial">Enter the First Letter of Your First Name:</label>
+                </div>
+                <div class="col-70">
+                  <input type="text" id="firstInitial" name="firstInitial">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="middleInitial">Enter the First Letter of Your Middle Name:</label>
+                </div>
+                <div class="col-70">
+                  <input type="text" id="middleInitial" name="middleInitial">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="lastInitial">Enter the First Letter of Your Last Name:</label>
+                </div>
+                <div class="col-70">
+                  <input type="text" id="lastInitial" name="lastInitial">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="dInM">Enter The Day of The Month That You Were Born On:</label>
+                </div>
+                <div class="col-70">
+                  <input type="text" id="dInM" name="dInM">
+                  <br>
+                  <p id="dateExample">    (Ex: If you were born on October 24th, 1984 then you would enter 24.)</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-30">
+                  <label>&nbsp;</label>
+                </div>
+                <div class="col-30">
+                  <input type="button" id="button" value="Calculate Your Evil Genius Name and Title!"><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-30"></div>
+                <div class="col-50">
+                  <p id="generatedName"></p>
+                  <img id="insertImage">
+                </div>
+                <div class="col-20"></div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <!-- Scripts-->
+  <script src="assets/js/jquery-1.12.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
