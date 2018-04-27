@@ -1,0 +1,72 @@
+// 1. Refer to the following code:
+
+function a() {
+  let counter = 0;
+  return function b() {
+    counter++;
+    console.log(counter);
+  }
+}
+
+// 1a. What will each of these expressions evaluate to?
+// 1b. What, if anything, will each of these expressions log to the console?
+// a;
+// a();
+// a()();
+// a()()();
+// console.log(a);
+// console.log(a());
+// console.log(a()());
+// console.log(a()()());
+
+// 2. What will be logged when the following code is executed?
+
+console.log('A');
+function f() {
+  console.log('B');
+}
+let x = 'C';
+console.log(x);
+x = f;
+x();
+console.log('D');
+let g = function() {
+  console.log('E');
+}
+x();
+f = g;
+x = f;
+x();
+console.log('F');
+g();
+
+// 3a. What variables will be bound in global scope after the following code is executed?
+// 3b. What will be the values of those variables?
+
+let one = 1;
+var two = 2;
+const three = 3;
+
+let functionOne = function(four, five) {
+  let six = four + five;
+  return six;
+};
+
+function functionTwo(seven) {
+  var eight = '8';
+  return seven++;
+}
+
+let nine = functionOne(one, two);
+const ten = functionTwo(three);
+
+function functionThree(one) {
+  return one;
+}
+
+var eleven = functionThree;
+var twelve = functionThree();
+var thirteen = functionThree(two);
+
+
+// 4. What will be logged by the following
