@@ -1,0 +1,31 @@
+.container {
+  background: grey;
+  border: solid 3px black;
+  border-radius: 5px;
+  height: 1000px;
+}
+
+.row {
+  height: 200px;
+}
+
+div.row{
+  height: 200px;
+  background-color: lightgrey;
+}
+
+div.col-sm-8 {
+  height: 100px;
+  border: solid 1px black;
+}
+
+div#canvas {
+  height: 200px;
+  border: solid 1px black;
+  background: lightgrey;
+}
+
+div.paintColors {
+  height: 100px;
+  background: grey;
+}
