@@ -2,24 +2,41 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Magnetic Poetry 2.0</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
-      #draggable {
-        width: 100px;
-        height: 100px;
-        background: #ccc;
-      }
+    #draggable {
+      width: 100px;
+      height: 100px;
+      padding: 0.5em;
+      float: left;
+      margin: 10px 10px 10px 0;
+    }
+    #droppable {
+      width: 150px;
+      height: 150px;
+      padding: 0.5em;
+      float: left; margin: 10px; }
     </style>
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   </head>
   <body>
-    <h1>Magnetic Poetry 2.0</h1>
-    <div id="draggable">Drag me</div>
-
+    <div id="droppable" class="ui-widget-header">
+      <h1>Magnetic Poetry 2.0</h1>
+    </div>
+    <div id="footer" class="ui-widget-content">
+      <div class="draggable">Drag me1</div>
+      <div class="draggable">Drag me2</div>
+    </div>
+    <script src="app.js"></script>
     <script>
-      $( "#draggable" ).draggable();
+      $("#draggable").draggable();
+      $("#droppable").droppable();
     </script>
   </body>
 </html>
